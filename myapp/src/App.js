@@ -1,9 +1,14 @@
 import logo from './logo.svg';
+import beverly from './Images/beverly.jpeg'
+import fall from './Images/fall.jpeg'
+import plants from './Images/plants.jpeg'
+import self from './Images/self.jpeg'
 import './App.css';
 
 function App() {
-  const name = "Maria";
 
+  /*
+  //comment out the map and objects for now since they aren't necessary for the website
   const maria = {
     name: "maria",
     age: 19,
@@ -43,6 +48,8 @@ function App() {
     )
   });
 
+  */
+
   //create a map
   const foodsList = ["Apple Pie", "Pasta Salad", "Omelettes" ];
   const foodMap = foodsList.map((food) =>{
@@ -52,8 +59,14 @@ function App() {
   });
 
   //function to do something when button is clicked
-  const buttonFunction = () => {
-    console.log("the button was clicked");
+  const bevImgFunction = () => {
+    var x = document.getElementById("bevButton");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } 
+    else {
+      x.style.display = "none";
+    }
   }
 
   //keeps track of characters typed into input box
@@ -66,18 +79,12 @@ function App() {
    
   return (
     <div className="App">
-      <header className="App-header">
 
-          hi my name is {name}
-          
-          <button onClick={buttonFunction}>I am a button</button>
+     
           
           <input type="text" onChange={onChangeFunction}/>
 
           <div>{foodMap}</div>
-          <div>{friendMap}</div>
-      
-      </header>
     
     
       <title>Maria Cristoforo's Website</title>
@@ -97,21 +104,24 @@ function App() {
         </p>
 
         <figure>
-            <img src="images/beverly.jpeg" alt="Beverly" className="bevImg"/>
-            <figcaption>Me in Beverly MA (coastal town w lots of beaches)</figcaption>
+            <img src={beverly} className="bevImg" alt="Beverly"/>
+            <button className="bevImg" img src={beverly} alt="Beverly" onClick={bevImgFunction}> </button>
+            <div id="bevButton">
+               <figcaption>Me in Beverly MA (coastal town w lots of beaches)</figcaption>
+            </div>
         </figure>
         
         <figure>
-            <img src="images/fall.jpeg" alt="Fall" className="fallImg"/>
+            <img src={fall} alt="Fall" className="fallImg"/>
             <figcaption>My fav season</figcaption>
         </figure>
 
         <figure>
-            <img src="images/plants.jpeg" alt="Plants" className="plantImg"/>
+            <img src={plants} alt="Plants" className="plantImg"/>
             <figcaption>Some plants I'm taking care of...</figcaption>
         </figure>
 
-        <img src="images/self.jpeg" alt="Self" className="selfImg"/>
+        <img src={self} alt="Self" className="selfImg"/>
       
 
   </div>
