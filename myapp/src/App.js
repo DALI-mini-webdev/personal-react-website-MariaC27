@@ -7,8 +7,10 @@ import './App.css';
 
 function App() {
 
+ 
   /*
   //comment out the map and objects for now since they aren't necessary for the website
+  //this was just for testing out a map with objects
   const maria = {
     name: "maria",
     age: 19,
@@ -54,13 +56,15 @@ function App() {
   const foodsList = ["Apple Pie", "Pasta Salad", "Omelettes" ];
   const foodMap = foodsList.map((food) =>{
     return(
-      <p>my favorite food is {food}</p>
+      <p className="foodMapText">{food}</p>
     )
   });
+
 
   //function to do something when button is clicked
   const bevImgFunction = () => {
     var x = document.getElementById("bevButton");
+
     if (x.style.display === "none") {
       x.style.display = "block";
     } 
@@ -69,24 +73,49 @@ function App() {
     }
   }
 
+  const fallImgFunction = () => {
+    var x = document.getElementById("fallButton");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } 
+    else {
+      x.style.display = "none";
+    }
+
+  }
+
+  const plantImgFunction = () => {
+    var x = document.getElementById("plantButton");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } 
+    else {
+      x.style.display = "none";
+    }
+
+  }
+
   //keeps track of characters typed into input box
   const onChangeFunction = (event) => {
     console.log(event.target.value);
+    var x = document.getElementById("textBoxAfterEnter");
+    console.log(x);
+    document.getElementById('textBox').onkeypress = function(e){
+      if (!e) e = window.event;
+      var keyCode = e.code || e.key;
+      if (keyCode == 'Enter'){
+        // Enter pressed
+        x.style.display = "block";
+        console.log("enter pressed");
+        
+      }
+    }
   }
  
   
-
-   
   return (
     <div className="App">
 
-     
-          
-          <input type="text" onChange={onChangeFunction}/>
-
-          <div>{foodMap}</div>
-    
-    
       <title>Maria Cristoforo's Website</title>
      
     
@@ -94,7 +123,20 @@ function App() {
 
         <h3 className="center">Dartmouth '24</h3>
 
+        
+        <div id="textBox">
+          <input type="text" onChange={onChangeFunction} className="inputBox"/>
+        </div>
+
+        <p className = "inputBoxCaption">Drop your email here and I'll email you something:</p>
+        
+
         <a target="_blank" className="linkPosition" href="https://github.com/MariaC27">my github page!</a>
+
+        <p className = "favFoods">Some of my favorite foods:</p>
+        <div className="foodMap">
+          {foodMap}
+        </div>
 
         <p>Super excited to be here! I'm from Beverly MA, a town on the northern coast of Massachusetts. 
             I'm interested in studying CS and statistics at Dartmouth and learning Mandarin Chinese. 
@@ -103,27 +145,41 @@ function App() {
             pets :( but I am a cat person. 
         </p>
 
+
+        <p className="p1">To see a caption for each image, click the "?" button next to each image!
+        (you may have to click twice - it's problem I can't fix for now)</p>
+
+        <div id="textBoxAfterEnter" className="ButtonDiv">
+          <p className="afterEnter">Thanks for replying!</p>
+        </div>
+
+
         <figure>
             <img src={beverly} className="bevImg" alt="Beverly"/>
-            <button className="bevImg" img src={beverly} alt="Beverly" onClick={bevImgFunction}> </button>
-            <div id="bevButton">
+            <button className="bevButton" onClick={bevImgFunction}>?</button>
+            <div id="bevButton" className="ButtonDiv">
                <figcaption>Me in Beverly MA (coastal town w lots of beaches)</figcaption>
             </div>
         </figure>
         
         <figure>
             <img src={fall} alt="Fall" className="fallImg"/>
-            <figcaption>My fav season</figcaption>
+            <button className="fallButton" onClick={fallImgFunction}>?</button>
+            <div id="fallButton" className="ButtonDiv">
+              <figcaption>My fav season</figcaption>
+            </div>
         </figure>
 
         <figure>
             <img src={plants} alt="Plants" className="plantImg"/>
-            <figcaption>Some plants I'm taking care of...</figcaption>
+            <button className="plantButton" onClick={plantImgFunction}>?</button>
+            <div id="plantButton" className="ButtonDiv">
+              <figcaption>Some plants I'm taking care of...</figcaption>
+            </div>
         </figure>
 
         <img src={self} alt="Self" className="selfImg"/>
       
-
   </div>
 
   );
