@@ -61,7 +61,7 @@ function App() {
   });
 
 
-  //function to do something when button is clicked
+  //function to do something when button is clicked, have different methods for each image
   const bevImgFunction = () => {
     var x = document.getElementById("bevButton");
 
@@ -95,6 +95,7 @@ function App() {
 
   }
 
+
   //keeps track of characters typed into input box
   const onChangeFunction = (event) => {
     console.log(event.target.value);
@@ -105,7 +106,8 @@ function App() {
       var keyCode = e.code || e.key;
       if (keyCode == 'Enter'){
         // Enter pressed
-        x.style.display = "block";
+        x.style.display = "block"; 
+        //when enter is pressed, display text that says "thanks for replying"
         console.log("enter pressed");
         
       }
