@@ -118,7 +118,7 @@ function App() {
   return (
     <div className="App">
 
-      <title>Maria Cristoforo's Website</title>
+      
      
     
         <h1 className="center">Maria Cristoforo</h1>
