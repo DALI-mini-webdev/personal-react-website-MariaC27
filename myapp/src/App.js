@@ -4,6 +4,7 @@ import fall from './Images/fall.jpeg'
 import plants from './Images/plants.jpeg'
 import self from './Images/self.jpeg'
 import './App.css';
+import Navbar from "./components/Navbar/Navbar"
 
 function App() {
 
@@ -118,7 +119,7 @@ function App() {
   return (
     <div className="App">
 
-      
+        <Navbar/>
      
     
         <h1 className="center">Maria Cristoforo</h1>
