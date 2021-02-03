@@ -22,17 +22,17 @@ class Navbar extends Component{
                     {MenuItems.map((item, index) =>{
                         return(
                             <li key={index}>
-                                <a className={item.cName} href={item.url}>
+                                <a target="_blank" className={item.cName} href={item.url}>
                                 {item.title}
                                 </a>
                             </li>
                         )
-                    })}  
+                    })} 
+
                 </ul>
-
-                <Button>Sign Up</Button>
-
+                <Button>Contact</Button>
             </nav>
+         
         )
     }
 }

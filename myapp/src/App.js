@@ -8,51 +8,6 @@ import Navbar from "./components/Navbar/Navbar"
 
 function App() {
 
- 
-  /*
-  //comment out the map and objects for now since they aren't necessary for the website
-  //this was just for testing out a map with objects
-  const maria = {
-    name: "maria",
-    age: 19,
-    major: "computer science",
-    location: "massachusetts"
-  }
-
-  const nonExistentSibling = {
-    name: "matthew",
-    age: 22,
-    major: "biology",
-    location: "new york"
-
-  }
-
-  const kevin = {
-    name: "kevin",
-    age: 19,
-    major: "mechanical engineering",
-    location: "massachusetts"
-  }
-
-  const sarah = {
-    name: "sarah",
-    age: 19,
-    major: "english",
-    location: "delaware"
-  }
-
-  //create a map with objects
-  const friends_and_family = [nonExistentSibling, kevin, sarah];
-  const friendMap = friends_and_family.map((friend) =>{
-   
-    return (
-      
-      <h1>{friend.name}</h1>
-    )
-  });
-
-  */
-
   //create a map
   const foodsList = ["Apple Pie", "Pasta Salad", "Omelettes" ];
   const foodMap = foodsList.map((food) =>{
@@ -128,20 +83,18 @@ function App() {
 
         
         <div id="textBox">
-          <input type="text" onChange={onChangeFunction} className="inputBox"/>
+          <input type="text" onChange={onChangeFunction}className="inputBox" />
         </div>
 
         <p className = "inputBoxCaption">Drop your email here and I'll email you something:</p>
         
-
-        <a target="_blank" className="linkPosition" href="https://github.com/MariaC27">my github page!</a>
 
         <p className = "favFoods">Some of my favorite foods:</p>
         <div className="foodMap">
           {foodMap}
         </div>
 
-        <p>Super excited to be here! I'm from Beverly MA, a town on the northern coast of Massachusetts. 
+        <p className="description">Super excited to be here! I'm from Beverly MA, a town on the northern coast of Massachusetts. 
             I'm interested in studying CS and statistics at Dartmouth and learning Mandarin Chinese. 
             I've programmed in Java and Python for my high school's robotics team, but I've never
             done much web development before. Outside of class I enjoy running and baking. I have no 

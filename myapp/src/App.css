@@ -54,13 +54,20 @@ body{
 p{
   text-align: center;
   font-size: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .p1{
+  margin-top: 15px;
   text-align: center;
   font-size: 15px;
+}
+
+.description{
+  text-align: center;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 60px;
 }
 
 figure{
@@ -71,10 +78,13 @@ figcaption{
   color: black;
   padding: 3px;
   text-align: center;
+  margin-bottom: 20px;
+  margin-top: 2px;
 }
 
 .center{
   text-align: center;
+  margin-top: 10px;
 }
 
 .linkPosition{
@@ -89,8 +99,8 @@ figcaption{
   position: absolute;
   width: 100px;
   height: 130px;
-  top: 20px;
-  right: 70px;
+  top: 100px;
+  right: 40px;
 
 }
 
@@ -98,8 +108,8 @@ figcaption{
 
   position: absolute;
   width: 150px;
-  height: 30px;
-  top: 67px;
+  height: 35px;
+  top: 140px;
   right: 200px;
   align-items: center;
   
@@ -110,8 +120,8 @@ figcaption{
   font-size: 15px;
   width: 200px;
   height: 30px;
-  top: 10px;
-  right: 200px;
+  top: 95px;
+  right: 150px;
   caption-side: top;
 }
 
@@ -121,24 +131,26 @@ figcaption{
   border-radius: 10px;
   border-style: dashed;
   width: 150px;
+  height: 100px;
   position: absolute;
-  top: 20px;
+  top: 100px;
   left: 100px;
   
 }
 
 .foodMapText {
   font-size: 15px;
+  margin-bottom: 8px;
+  margin-top: 8px;
 }
 
 .favFoods {
   font-size: 15px;
   position: absolute;
-  top: 20px;
+  top: 100px;
   left: 20px;
   width: 50px;
   
-
 }
 
 .bevImg{
@@ -148,6 +160,7 @@ figcaption{
   margin-top: 20px;
   margin-right: 20px;
   margin-left: 50px;
+  margin-bottom: 30px;
   caption-side: bottom;
   
 }
@@ -158,6 +171,7 @@ figcaption{
   margin-top: 3px;
   margin-right: 5px;
   margin-left: 5px;
+  margin-bottom: 5px;
   background-color: white;
   text-align: center;
 }
@@ -174,6 +188,7 @@ figcaption{
   margin-top: 20px;
   margin-right: 30px;
   margin-left: 30px;
+  margin-bottom: 30px;
   caption-side: bottom;
 }
 
@@ -183,6 +198,7 @@ figcaption{
   margin-top: 3px;
   margin-right: 5px;
   margin-left: 5px;
+  margin-bottom: 5px;
   background-color: white;
   text-align: center;
 }
@@ -195,6 +211,7 @@ figcaption{
   margin-left: 50px;
   width: 200px;
   height: 270px;
+  margin-bottom: 30px;
   caption-side: bottom;
 
 }
@@ -205,6 +222,7 @@ figcaption{
   margin-top: 3px;
   margin-right: 5px;
   margin-left: 5px;
+  margin-bottom: 5px;
   background-color: white;
   text-align: center;
 
@@ -216,8 +234,8 @@ figcaption{
   position: absolute;
   width: 100px;
   height: 130px;
-  top: 20px;
-  left: 350px;
+  top: 85px;
+  left: 380px;
 }
 
 

@@ -1,27 +1,27 @@
 export const MenuItems = [
     {
-        title:'Home',
-        url: '#', //where you put the link
+        title:'Dartmouth',
+        url: "https://home.dartmouth.edu/", //where you put the link
         cName: 'nav-links'
     },
     {
-        title:'Servies',
-        url: '#', //where you put the link
+        title:'Github',
+        url: 'https://github.com/MariaC27', //where you put the link
         cName: 'nav-links'
     },
     {
-        title:'Products',
-        url: '#', //where you put the link
+        title:'LinkedIn',
+        url: 'https://www.linkedin.com/in/maria-cristoforo-746b76203', //where you put the link
         cName: 'nav-links'
     },
     {
-        title:'Contact Us',
-        url: '#', //where you put the link
+        title:'Portfolio',
+        url: 'https://journeys.dartmouth.edu/mariahcristoforo24/', //where you put the link
         cName: 'nav-links'
     },
     {
-        title:'Sign up',
-        url: '#', //where you put the link
+        title:'Contact',
+        url: '#', //doesn't do anything for now
         cName: 'nav-links-mobile'
     }
 
