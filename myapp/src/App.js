@@ -5,20 +5,28 @@ import plants from './Images/plants.jpeg'
 import self from './Images/self.jpeg'
 import './App.css';
 import Navbar from "./components/Navbar/Navbar"
+import ImageGallery from "./components/ImageGallery"
+import { Component } from 'react';
 
-function App() {
+class App extends Component{
+  constructor(props){
+    super(props);
+    this.state = {};
+}
+  state = {currPage: true}
+  
+  seeGallery = () => {
+    this.setState({currPage: false})
+    console.log("reached see Gallery")
+  }
 
-  //create a map
-  const foodsList = ["Apple Pie", "Pasta Salad", "Omelettes" ];
-  const foodMap = foodsList.map((food) =>{
-    return(
-      <p className="foodMapText">{food}</p>
-    )
-  });
-
+  seeMain = () => {
+    this.setState({currPage: true})
+    console.log("reached see Main")
+  }
 
   //function to do something when button is clicked, have different methods for each image
-  const bevImgFunction = () => {
+  bevImgFunction = () => {
     var x = document.getElementById("bevButton");
 
     if (x.style.display === "none") {
@@ -29,7 +37,7 @@ function App() {
     }
   }
 
-  const fallImgFunction = () => {
+  fallImgFunction = () => {
     var x = document.getElementById("fallButton");
     if (x.style.display === "none") {
       x.style.display = "block";
@@ -40,7 +48,7 @@ function App() {
 
   }
 
-  const plantImgFunction = () => {
+  plantImgFunction = () => {
     var x = document.getElementById("plantButton");
     if (x.style.display === "none") {
       x.style.display = "block";
@@ -53,7 +61,7 @@ function App() {
 
 
   //keeps track of characters typed into input box
-  const onChangeFunction = (event) => {
+  onChangeFunction = (event) => {
     console.log(event.target.value);
     var x = document.getElementById("textBoxAfterEnter");
     console.log(x);
@@ -69,13 +77,19 @@ function App() {
       }
     }
   }
- 
-  
+
+  render() {
+
+    if (this.state.currPage === false){
+        <ImageGallery visible={true}/>
+    }
+
   return (
     <div className="App">
 
         <Navbar/>
-     
+        
+
     
         <h1 className="center">Maria Cristoforo</h1>
 
@@ -83,16 +97,11 @@ function App() {
 
         
         <div id="textBox">
-          <input type="text" onChange={onChangeFunction}className="inputBox" />
+          <input type="text" onChange={this.onChangeFunction}className="inputBox" />
         </div>
 
         <p className = "inputBoxCaption">Drop your email here and I'll email you something:</p>
         
-
-        <p className = "favFoods">Some of my favorite foods:</p>
-        <div className="foodMap">
-          {foodMap}
-        </div>
 
         <p className="description">Super excited to be here! I'm from Beverly MA, a town on the northern coast of Massachusetts. 
             I'm interested in studying CS and statistics at Dartmouth and learning Mandarin Chinese. 
@@ -105,6 +114,7 @@ function App() {
         <p className="p1">To see a caption for each image, click the "?" button next to each image!
         (you may have to click twice - it's problem I can't fix for now)</p>
 
+
         <div id="textBoxAfterEnter" className="ButtonDiv">
           <p className="afterEnter">Thanks for replying!</p>
         </div>
@@ -112,7 +122,7 @@ function App() {
 
         <figure>
             <img src={beverly} className="bevImg" alt="Beverly"/>
-            <button className="bevButton" onClick={bevImgFunction}>?</button>
+            <button className="bevButton" onClick={this.bevImgFunction}>?</button>
             <div id="bevButton" className="ButtonDiv">
                <figcaption>Me in Beverly MA (coastal town w lots of beaches)</figcaption>
             </div>
@@ -120,7 +130,7 @@ function App() {
         
         <figure>
             <img src={fall} alt="Fall" className="fallImg"/>
-            <button className="fallButton" onClick={fallImgFunction}>?</button>
+            <button className="fallButton" onClick={this.fallImgFunction}>?</button>
             <div id="fallButton" className="ButtonDiv">
               <figcaption>My fav season</figcaption>
             </div>
@@ -128,7 +138,7 @@ function App() {
 
         <figure>
             <img src={plants} alt="Plants" className="plantImg"/>
-            <button className="plantButton" onClick={plantImgFunction}>?</button>
+            <button className="plantButton" onClick={this.plantImgFunction}>?</button>
             <div id="plantButton" className="ButtonDiv">
               <figcaption>Some plants I'm taking care of...</figcaption>
             </div>
@@ -139,6 +149,7 @@ function App() {
   </div>
 
   );
+}
 }
 
 export default App;

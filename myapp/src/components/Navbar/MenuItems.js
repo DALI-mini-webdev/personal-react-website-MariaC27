@@ -1,7 +1,7 @@
 export const MenuItems = [
     {
-        title:'Dartmouth',
-        url: "https://home.dartmouth.edu/", //where you put the link
+        title:'Google',
+        url: 'https://www.google.com/', //where you put the link
         cName: 'nav-links'
     },
     {

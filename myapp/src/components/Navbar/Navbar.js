@@ -4,11 +4,26 @@ import {MenuItems} from "./MenuItems"
 import './Navbar.css'
 import {Button} from "../Button"
 
+//the child component to the imageGallery
 class Navbar extends Component{
+    constructor(props){
+        super(props);
+        this.state = {};
+    }
     state = {clicked: false}
 
     handleClick = () => {
         this.setState({clicked:!this.state.clicked})
+    }
+
+    changePage = () => {
+        if (this.props.currPage){
+            this.props.seeGallery();
+        }
+        else{
+            //this.props.seeMain();
+        }
+        
     }
 
     render(){
@@ -22,6 +37,7 @@ class Navbar extends Component{
                     {MenuItems.map((item, index) =>{
                         return(
                             <li key={index}>
+                                
                                 <a target="_blank" className={item.cName} href={item.url}>
                                 {item.title}
                                 </a>
@@ -30,7 +46,9 @@ class Navbar extends Component{
                     })} 
 
                 </ul>
-                <Button>Contact</Button>
+               
+                <Button onClick={this.changePage}>Gallery</Button>
+                 
             </nav>
          
         )
