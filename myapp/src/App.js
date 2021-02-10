@@ -11,7 +11,9 @@ import { Component } from 'react';
 class App extends Component{
   constructor(props){
     super(props);
-    this.state = {};
+    this.state = {
+      currPage: "Home"
+    };
 }
   state = {currPage: true}
   
@@ -78,16 +80,30 @@ class App extends Component{
     }
   }
 
+
+  //usage of callback functions - pressing "Email" button causes email to appear on screen
+  changeCurrPage = (newCurrPage) => {
+    console.log(newCurrPage)
+    this.setState({
+      currPage: newCurrPage,
+    })
+  }
+
+  renderPage = () => {
+    if(this.state.currPage === "Gallery"){
+      return <ImageGallery/>
+    } 
+   
+  }
+
   render() {
 
-    if (this.state.currPage === false){
-        <ImageGallery visible={true}/>
-    }
 
   return (
     <div className="App">
 
-        <Navbar/>
+        <Navbar changeCurrPage = {this.changeCurrPage}/>
+        {this.renderPage()}
         
 
     

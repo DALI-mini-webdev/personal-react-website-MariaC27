@@ -34,20 +34,22 @@ class Navbar extends Component{
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                    {MenuItems.map((item, index) =>{
-                        return(
-                            <li key={index}>
+                {MenuItems.map((item,index) => {
+                        return (
+                            <li key={index} >
                                 
                                 <a target="_blank" className={item.cName} href={item.url}>
                                 {item.title}
                                 </a>
                             </li>
+
+                            
                         )
-                    })} 
+                    })}
 
                 </ul>
                
-                <Button onClick={this.changePage}>Gallery</Button>
+                <Button onClick = {() => {this.props.changeCurrPage("Gallery")}}>Email</Button>
                  
             </nav>
          
