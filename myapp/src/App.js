@@ -7,12 +7,14 @@ import './App.css';
 import Navbar from "./components/Navbar/Navbar"
 import ImageGallery from "./components/ImageGallery"
 import { Component } from 'react';
+import axios from 'axios'; 
 
 class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      currPage: "Home"
+      currPage: "Home",
+      data: null
     };
 }
   state = {currPage: true}
@@ -26,6 +28,32 @@ class App extends Component{
     this.setState({currPage: true})
     console.log("reached see Main")
   }
+
+  fetchData = () => {
+
+     axios.get("http://jservice.io/api/random")
+     .then((response) => {
+       console.log(response);
+       this.setState({data: response.data[0]})
+     }).catch((error) => {
+       console.log(error)
+     })
+
+ };
+
+ renderData = () => {
+  if(this.state.data) {
+    return(
+      <div className="jeapordyButton">
+        <div>Question: {this.state.data.question}</div>
+          <div>Answer: {this.state.data.answer}</div>
+
+      </div>
+    )
+  }else{
+    return null
+  }
+}
 
   //function to do something when button is clicked, have different methods for each image
   bevImgFunction = () => {
@@ -161,7 +189,11 @@ class App extends Component{
         </figure>
 
         <img src={self} alt="Self" className="selfImg"/>
-      
+
+        <div className="jeapordyButton">
+        <button onClick = {this.fetchData}>click for a jeapordy question</button>
+        </div>
+        {this.renderData()}
   </div>
 
   );
