@@ -19,15 +19,6 @@ class App extends Component{
 }
   state = {currPage: true}
   
-  seeGallery = () => {
-    this.setState({currPage: false})
-    console.log("reached see Gallery")
-  }
-
-  seeMain = () => {
-    this.setState({currPage: true})
-    console.log("reached see Main")
-  }
 
   fetchData = () => {
 

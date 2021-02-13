@@ -16,15 +16,7 @@ class Navbar extends Component{
         this.setState({clicked:!this.state.clicked})
     }
 
-    changePage = () => {
-        if (this.props.currPage){
-            this.props.seeGallery();
-        }
-        else{
-            //this.props.seeMain();
-        }
-        
-    }
+
 
     render(){
         return(
