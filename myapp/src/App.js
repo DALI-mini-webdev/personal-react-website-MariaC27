@@ -5,11 +5,16 @@ import plants from './Images/plants.jpeg'
 import self from './Images/self.jpeg'
 import './App.css';
 import Navbar from "./components/Navbar/Navbar"
+import ToDoBoard from "./components/ToDoBoard"
 import ImageGallery from "./components/ImageGallery"
 import { Component } from 'react';
-import axios from 'axios'; 
+import axios from 'axios';
+import Firebase from './firestore/index';
 
 class App extends Component{
+
+  
+
   constructor(props){
     super(props);
     this.state = {
@@ -18,6 +23,8 @@ class App extends Component{
     };
 }
   state = {currPage: true}
+
+  
   
 
   fetchData = () => {
@@ -117,15 +124,16 @@ class App extends Component{
 
   render() {
 
+    console.log(Firebase);
+
 
   return (
     <div className="App">
 
+        
         <Navbar changeCurrPage = {this.changeCurrPage}/>
         {this.renderPage()}
         
-
-    
         <h1 className="center">Maria Cristoforo</h1>
 
         <h3 className="center">Dartmouth '24</h3>
@@ -185,6 +193,13 @@ class App extends Component{
         <button onClick = {this.fetchData}>click for a jeapordy question</button>
         </div>
         {this.renderData()}
+
+        <div className="todoboard">
+          <ToDoBoard></ToDoBoard>
+        </div>
+
+        
+
   </div>
 
   );
