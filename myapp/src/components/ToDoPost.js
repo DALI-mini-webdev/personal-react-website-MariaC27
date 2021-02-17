@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Firebase from '../firestore/index';
+import './ToDo.css';
 
 
 class ToDoPost extends Component {

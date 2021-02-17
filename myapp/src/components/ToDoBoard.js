@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Firebase from '../firestore/index';
 import ToDoPost from './ToDoPost';
+import './ToDo.css';
 
 class ToDoBoard extends Component {
   constructor(props) {
@@ -57,7 +58,7 @@ class ToDoBoard extends Component {
     const posts = this.state.allToDos;
     const allPosts = posts.map((todo) => {
         return (
-          <ToDoPost
+          <ToDoPost className="todoPost"
             title={todo.title}
             task={todo.task}
             id={todo.id}
@@ -67,21 +68,25 @@ class ToDoBoard extends Component {
     );
     return (
       <div>
-        <p> To Do Board </p>
+        <p className="boardTitle"> To Do Board </p>
        
-        <p>Add something!</p>
+        <p className="boardText">Add something!</p>
 
         <p>Enter Title:</p>
-        <input type="text" value={this.state.title} onChange={this.newTitleFunction} />
+        <input className="boardInput" type="text" value={this.state.title} onChange={this.newTitleFunction} />
 
         <p>Enter Task:</p>
-        <input type="text" value={this.state.task} onChange={this.newTaskFunction} />
+        <input className="boardInput" type="text" value={this.state.task} onChange={this.newTaskFunction} />
 
-        <button onClick={this.saveNewToDo}>Save To Do!</button>
-        <div className='allToDos'>
-          <button onClick={this.fetchToDos}> Show My To Dos!</button>
+        <button className="boardButton" onClick={this.saveNewToDo}>Save To Do!</button>
+
+        
+          <button className="boardButton" onClick={this.fetchToDos}> Show My To Dos!</button>
+          <div>
           {allPosts}
-        </div>
+          </div>
+         
+       
       </div>
     );
   }
